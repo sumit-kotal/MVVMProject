@@ -2,21 +2,59 @@ package com.aztechz.projectbinaryveda
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.support.v7.app.AppCompatActivity
+import android.view.View
+import android.widget.Toast
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_main.*
 
-import com.aztechz.projectbinaryveda.Models.Seeker
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val model = ViewModelProviders.of(this).get<SeekerViewModel>(SeekerViewModel::class.java!!)
+        val model = ViewModelProviders.of(this).get<SeekerViewModel>(SeekerViewModel::class.java)
 
-        model.seeker?.observe(this, Observer { })
+        model.getSeeker().observe(this, Observer { seeker ->
+            val data = seeker?.data
 
+            name.text = data?.name
+            designation.text = data?.designation?.name
+            location.text = data?.location
+            qualification.text = data?.highestQualification?.name
+            work_experience.text = data?.experience
+            expected_ctc.text = data?.expectedCtc
+            current_working.text = data?.lastCompany?.name
+            current_designation.text = data?.designation?.name
+
+
+
+            Picasso.get()
+                    .load(data?.image)
+                    .placeholder(R.mipmap.ic_launcher)
+                    .error(android.R.drawable.stat_notify_error)
+                    .into(circleImageView)
+
+            hand.setOnClickListener(this)
+            cancel.setOnClickListener(this)
+            accept.setOnClickListener(this)
+
+        })
     }
+
+    override fun onClick(p0: View?) {
+        var buttonName = ""
+        when(p0?.id)
+        {
+            R.id.accept -> buttonName = "Accept"
+            R.id.cancel -> buttonName = "Cancel"
+            R.id.hand -> buttonName = "Hand"
+        }
+        Toast.makeText(applicationContext,"Clicked Button $buttonName",Toast.LENGTH_SHORT).show()
+    }
+
+
 }

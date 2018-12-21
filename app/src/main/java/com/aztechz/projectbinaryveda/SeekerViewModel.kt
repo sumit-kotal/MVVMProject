@@ -3,15 +3,8 @@ package com.aztechz.projectbinaryveda
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import android.util.Log
-
 import com.aztechz.projectbinaryveda.Models.Seeker
 
-import java.io.IOException
-
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
-import okhttp3.Request
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

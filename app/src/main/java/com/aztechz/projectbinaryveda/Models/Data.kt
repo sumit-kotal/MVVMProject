@@ -32,6 +32,9 @@ class Data {
     @SerializedName("highest_qualification")
     @Expose
     var highestQualification: HighestQualification? = null
+    @SerializedName("last_company")
+    @Expose
+    var lastCompany: LastCompany? = null
     @SerializedName("experience")
     @Expose
     var experience: String? = null
@@ -53,6 +56,9 @@ class Data {
     @SerializedName("radius")
     @Expose
     var radius: Int? = null
+    @SerializedName("action_taken")
+    @Expose
+    var actionTaken: ActionTaken? = null
     @SerializedName("city_list")
     @Expose
     var cityList: List<String>? = null

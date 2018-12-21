@@ -11,13 +11,14 @@
         android:id="@+id/include"
         layout="@layout/toolbar" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <com.mikhaellopez.circularimageview.CircularImageView
         android:id="@+id/circleImageView"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="@dimen/margin_8dp"
+        app:civ_border="false"
         android:src="@mipmap/ic_launcher"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -112,6 +113,7 @@
                         android:src="@drawable/qualification" />
 
                     <TextView
+                        android:id="@+id/qualification"
                         android:textSize="@dimen/textsize_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -147,6 +149,7 @@
                         android:src="@drawable/work_experience" />
 
                     <TextView
+                        android:id="@+id/work_experience"
                         android:textSize="@dimen/textsize_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -182,6 +185,7 @@
                         android:src="@drawable/expected_ctc" />
 
                     <TextView
+                        android:id="@+id/expected_ctc"
                         android:textSize="@dimen/textsize_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -221,10 +225,11 @@
                     android:textAlignment="center" />
 
                 <TextView
+                    android:id="@+id/current_working"
                     android:textSize="@dimen/textsize_medium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Currently Working"
+                    android:text=""
                     android:textAlignment="center" />
 
                 <View
@@ -253,10 +258,11 @@
                     android:textAlignment="center" />
 
                 <TextView
+                    android:id="@+id/current_designation"
                     android:textSize="@dimen/textsize_medium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Currently Working"
+                    android:text=""
                     android:textAlignment="center" />
 
             </LinearLayout>
@@ -295,16 +301,12 @@
 
             </android.support.design.widget.TabLayout>
 
-            <TextView
-                android:textSize="@dimen/textsize_medium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/margin_8dp"
+            <android.support.v4.view.ViewPager
+                android:id="@+id/tabText"
+                android:layout_width="379dp"
+                android:layout_height="59dp"
                 android:background="@color/back_grey"
-                android:text="Adobe photoshop | Sketch | Adobe Illustrator |
-            Indesign"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:padding="@dimen/margin_8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tabs" />
@@ -332,13 +334,14 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+            <ImageView
+                android:id="@+id/hand"
                 android:layout_centerInParent="true"
-                android:scaleType="centerCrop"
+                android:src="@drawable/fill_1"
+                android:scaleType="center"
                 android:background="@drawable/cirlce_background_white"
-                android:src="@drawable/fill_1" />
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
 
         </RelativeLayout>
 
@@ -347,12 +350,14 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+            <ImageView
+                android:id="@+id/cancel"
                 android:layout_centerInParent="true"
+                android:src="@drawable/cancel"
+                android:scaleType="center"
                 android:background="@drawable/cirlce_background_blue"
-                android:src="@drawable/cancel" />
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
 
         </RelativeLayout>
 
@@ -361,12 +366,14 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+            <ImageView
+                android:id="@+id/accept"
                 android:layout_centerInParent="true"
+                android:src="@drawable/accept"
+                android:scaleType="center"
                 android:background="@drawable/cirlce_background_white"
-                android:src="@drawable/accept" />
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
 
         </RelativeLayout>
 
