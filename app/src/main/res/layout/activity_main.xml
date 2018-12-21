@@ -336,8 +336,8 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
                 android:background="@drawable/cirlce_background_white"
-                android:scaleType="center"
                 android:src="@drawable/fill_1" />
 
         </RelativeLayout>
@@ -352,7 +352,6 @@
                 android:layout_height="40dp"
                 android:layout_centerInParent="true"
                 android:background="@drawable/cirlce_background_blue"
-                android:scaleType="center"
                 android:src="@drawable/cancel" />
 
         </RelativeLayout>
@@ -367,7 +366,6 @@
                 android:layout_height="60dp"
                 android:layout_centerInParent="true"
                 android:background="@drawable/cirlce_background_white"
-                android:scaleType="center"
                 android:src="@drawable/accept" />
 
         </RelativeLayout>
