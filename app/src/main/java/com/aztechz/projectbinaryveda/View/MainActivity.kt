@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             spinner.adapter = spinnerArrayAdapter
 
             tabText.adapter = MainSectionsAdapter(supportFragmentManager,tab_skill,tab_work,tab_industry)
+            tabText.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
             tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(tabText))
 
             Picasso.get()
