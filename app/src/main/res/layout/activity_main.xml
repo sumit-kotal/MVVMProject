@@ -10,20 +10,20 @@
     <include
         android:id="@+id/include"
         layout="@layout/toolbar"
-        android:layout_marginBottom="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/circleImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.mikhaellopez.circularimageview.CircularImageView
         android:id="@+id/circleImageView"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="@dimen/margin_8dp"
         android:layout_marginBottom="8dp"
         android:src="@mipmap/ic_launcher"
@@ -36,9 +36,9 @@
 
     <LinearLayout
         android:layout_width="245dp"
-        android:layout_height="73dp"
+        android:layout_height="75dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:gravity="center_vertical"
@@ -320,7 +320,6 @@
                 android:id="@+id/tabText"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginBottom="8dp"
                 android:background="@color/back_grey"
                 android:padding="@dimen/margin_8dp"
                 app:layout_constraintBottom_toBottomOf="parent"

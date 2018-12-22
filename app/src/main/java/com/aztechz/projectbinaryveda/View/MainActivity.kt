@@ -6,14 +6,17 @@ import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.aztechz.projectbinaryveda.Adapters.MainSectionsAdapter
 import com.aztechz.projectbinaryveda.R
 import com.aztechz.projectbinaryveda.ViewModel.SeekerViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class MainActivity : AppCompatActivity(),View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,11 +41,22 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             val tab_work = data?.workFunctions
             val tab_industry = data?.industries
 
+            var spinnerArray : MutableList<String>? = ArrayList()
+
+            for (i in 0 until data?.roles!!.size) {
+                spinnerArray?.add(data.roles!![i].name!!)
+            }
+
+            val spinnerArrayAdapter = ArrayAdapter<String>(this, R.layout.spinner_item, spinnerArray)
+            spinnerArrayAdapter.setDropDownViewResource(android.R.layout
+                    .simple_spinner_dropdown_item)
+            spinner.adapter = spinnerArrayAdapter
+
             tabText.adapter = MainSectionsAdapter(supportFragmentManager,tab_skill,tab_work,tab_industry)
             tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(tabText))
 
             Picasso.get()
-                    .load(data?.image)
+                    .load(data.image)
                     .placeholder(R.mipmap.ic_launcher)
                     .error(android.R.drawable.stat_notify_error)
                     .into(circleImageView)
