@@ -5,21 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".MainActivity">
+    tools:context=".View.MainActivity">
 
     <include
         android:id="@+id/include"
-        layout="@layout/toolbar" />
+        layout="@layout/toolbar"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/circleImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <com.mikhaellopez.circularimageview.CircularImageView
         android:id="@+id/circleImageView"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="@dimen/margin_8dp"
-        app:civ_border="false"
+        android:layout_marginBottom="8dp"
         android:src="@mipmap/ic_launcher"
+        app:civ_border="false"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,26 +38,30 @@
         android:layout_width="245dp"
         android:layout_height="73dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/circleImageView"
         app:layout_constraintTop_toBottomOf="@+id/include">
 
         <TextView
             android:id="@+id/name"
-            android:textColor="@android:color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Amit Vora" />
+            android:text="Amit Vora"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/designation"
-            android:textColor="@android:color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_8dp"
-            android:text="Senior Software Developer" />
+            android:text="Senior Software Developer"
+            android:textColor="@android:color/white" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -64,9 +77,9 @@
                 android:id="@+id/location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
                 android:layout_marginStart="@dimen/margin_8dp"
-                android:text="Malabar Hill" />
+                android:text="Malabar Hill"
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
 
@@ -79,10 +92,12 @@
         android:layout_margin="@dimen/margin_8dp"
         android:layout_marginStart="@dimen/margin_8dp"
         android:layout_marginTop="@dimen/margin_8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="@dimen/margin_8dp"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="4dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/circleImageView">
 
@@ -114,19 +129,19 @@
 
                     <TextView
                         android:id="@+id/qualification"
-                        android:textSize="@dimen/textsize_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="B Tech"
                         android:textAlignment="center"
+                        android:textSize="@dimen/textsize_medium"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:textSize="@dimen/textsize_small"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/qualification"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="@dimen/textsize_small" />
 
                 </LinearLayout>
 
@@ -150,19 +165,19 @@
 
                     <TextView
                         android:id="@+id/work_experience"
-                        android:textSize="@dimen/textsize_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="10 years"
                         android:textAlignment="center"
+                        android:textSize="@dimen/textsize_medium"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:textSize="@dimen/textsize_small"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/work_experience"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="@dimen/textsize_small" />
 
                 </LinearLayout>
 
@@ -186,19 +201,19 @@
 
                     <TextView
                         android:id="@+id/expected_ctc"
-                        android:textSize="@dimen/textsize_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="B Tech"
                         android:textAlignment="center"
+                        android:textSize="@dimen/textsize_medium"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:textSize="@dimen/textsize_small"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/expected_ctc"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="@dimen/textsize_small" />
 
                 </LinearLayout>
 
@@ -210,40 +225,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_8dp"
-                android:orientation="vertical"
                 android:background="@color/back_grey"
+                android:orientation="vertical"
                 android:padding="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
                 <TextView
-                    android:textSize="@dimen/textsize_small"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/currently_working"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textsize_small" />
 
                 <TextView
                     android:id="@+id/current_working"
-                    android:textSize="@dimen/textsize_medium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textsize_medium" />
 
                 <View
-                    android:background="@color/line_grey"
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"/>
+                    android:layout_height="2dp"
+                    android:background="@color/line_grey" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linearLayout3"
-                android:background="@color/back_grey"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/back_grey"
                 android:orientation="vertical"
                 android:padding="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -251,30 +266,30 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
                 <TextView
-                    android:textSize="@dimen/textsize_small"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/designation"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textsize_small" />
 
                 <TextView
                     android:id="@+id/current_designation"
-                    android:textSize="@dimen/textsize_medium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textsize_medium" />
 
             </LinearLayout>
 
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabs"
-                android:textSize="@dimen/textsize_medium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_8dp"
                 android:layout_marginEnd="@dimen/margin_8dp"
+                android:textSize="@dimen/textsize_medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
@@ -303,10 +318,12 @@
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/tabText"
-                android:layout_width="379dp"
-                android:layout_height="59dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="8dp"
                 android:background="@color/back_grey"
                 android:padding="@dimen/margin_8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tabs" />
@@ -322,12 +339,14 @@
         android:layout_width="283dp"
         android:layout_height="106dp"
         android:layout_marginStart="@dimen/margin_8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="@dimen/margin_8dp"
         android:layout_marginBottom="@dimen/margin_8dp"
         android:baselineAligned="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -336,12 +355,12 @@
 
             <ImageView
                 android:id="@+id/hand"
-                android:layout_centerInParent="true"
-                android:src="@drawable/fill_1"
-                android:scaleType="center"
-                android:background="@drawable/cirlce_background_white"
                 android:layout_width="60dp"
-                android:layout_height="60dp" />
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/cirlce_background_white"
+                android:scaleType="center"
+                android:src="@drawable/fill_1" />
 
         </RelativeLayout>
 
@@ -352,12 +371,12 @@
 
             <ImageView
                 android:id="@+id/cancel"
-                android:layout_centerInParent="true"
-                android:src="@drawable/cancel"
-                android:scaleType="center"
-                android:background="@drawable/cirlce_background_blue"
                 android:layout_width="40dp"
-                android:layout_height="40dp" />
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/cirlce_background_blue"
+                android:scaleType="center"
+                android:src="@drawable/cancel" />
 
         </RelativeLayout>
 
@@ -368,12 +387,12 @@
 
             <ImageView
                 android:id="@+id/accept"
-                android:layout_centerInParent="true"
-                android:src="@drawable/accept"
-                android:scaleType="center"
-                android:background="@drawable/cirlce_background_white"
                 android:layout_width="60dp"
-                android:layout_height="60dp" />
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/cirlce_background_white"
+                android:scaleType="center"
+                android:src="@drawable/accept" />
 
         </RelativeLayout>
 

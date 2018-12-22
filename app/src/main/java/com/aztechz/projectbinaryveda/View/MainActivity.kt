@@ -1,11 +1,15 @@
-package com.aztechz.projectbinaryveda
+package com.aztechz.projectbinaryveda.View
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
+import com.aztechz.projectbinaryveda.Adapters.MainSectionsAdapter
+import com.aztechz.projectbinaryveda.R
+import com.aztechz.projectbinaryveda.ViewModel.SeekerViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -30,7 +34,12 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             current_working.text = data?.lastCompany?.name
             current_designation.text = data?.designation?.name
 
+            val tab_skill = data?.skills
+            val tab_work = data?.workFunctions
+            val tab_industry = data?.industries
 
+            tabText.adapter = MainSectionsAdapter(supportFragmentManager,tab_skill,tab_work,tab_industry)
+            tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(tabText))
 
             Picasso.get()
                     .load(data?.image)

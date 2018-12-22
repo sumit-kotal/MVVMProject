@@ -1,8 +1,9 @@
-package com.aztechz.projectbinaryveda
+package com.aztechz.projectbinaryveda.ViewModel
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import com.aztechz.projectbinaryveda.Network.Api
 import com.aztechz.projectbinaryveda.Models.Seeker
 
 import retrofit2.Call
@@ -47,7 +48,6 @@ class SeekerViewModel : ViewModel() {
             override fun onResponse(call: Call<Seeker>, response: Response<Seeker>) {
 
                 //finally we are setting the list to our MutableLiveData
-
                 seeker!!.value = response.body()
             }
 

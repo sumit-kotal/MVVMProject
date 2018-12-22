@@ -1,4 +1,4 @@
-package com.aztechz.projectbinaryveda
+package com.aztechz.projectbinaryveda.Network
 
 import com.aztechz.projectbinaryveda.Models.Seeker
 import retrofit2.Call
