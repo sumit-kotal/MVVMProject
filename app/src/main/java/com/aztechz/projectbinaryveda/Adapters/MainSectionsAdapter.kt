@@ -13,11 +13,7 @@ import com.aztechz.projectbinaryveda.Models.WorkFunction
 import com.aztechz.projectbinaryveda.R
 import kotlinx.android.synthetic.main.fragment_tab.view.*
 
-class MainSectionsAdapter(fm: FragmentManager, skill: List<Skill>?, workFunction: List<WorkFunction>?, industry: List<Industry>?) : FragmentPagerAdapter(fm) {
-
-    var skill = skill
-    var workFunction = workFunction
-    var industry = industry
+class MainSectionsAdapter(fm: FragmentManager, private var skill: List<Skill>?, private var workFunction: List<WorkFunction>?, private var industry: List<Industry>?) : FragmentPagerAdapter(fm) {
 
 
     override fun getItem(position: Int): Fragment? {
@@ -49,9 +45,9 @@ class MainSectionsAdapter(fm: FragmentManager, skill: List<Skill>?, workFunction
     }
 
     companion object {
-        private val SKILL_SET = 0
-        private val WORK_FUNCTION = 1
-        private val INDUSTRY = 2
+        private const val SKILL_SET = 0
+        private const val WORK_FUNCTION = 1
+        private const val INDUSTRY = 2
 
         private val TABS = intArrayOf(SKILL_SET, WORK_FUNCTION, INDUSTRY)
     }

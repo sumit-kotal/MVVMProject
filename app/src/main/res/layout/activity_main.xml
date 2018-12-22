@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".View.MainActivity">
+    tools:context=".View.MainActivity"
+    tools:ignore="Overdraw">
 
     <include
         android:id="@+id/include"
@@ -49,14 +50,12 @@
         app:layout_constraintTop_toBottomOf="@+id/include">
 
         <TextView
-            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Amit Vora"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/designation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_8dp"
@@ -74,7 +73,6 @@
                 android:src="@drawable/loc" />
 
             <TextView
-                android:id="@+id/location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_8dp"
@@ -128,7 +126,6 @@
                         android:src="@drawable/qualification" />
 
                     <TextView
-                        android:id="@+id/qualification"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="B Tech"
@@ -164,7 +161,6 @@
                         android:src="@drawable/work_experience" />
 
                     <TextView
-                        android:id="@+id/work_experience"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="10 years"
@@ -200,7 +196,6 @@
                         android:src="@drawable/expected_ctc" />
 
                     <TextView
-                        android:id="@+id/expected_ctc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="B Tech"
@@ -240,7 +235,6 @@
                     android:textSize="@dimen/textsize_small" />
 
                 <TextView
-                    android:id="@+id/current_working"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=""
@@ -273,7 +267,6 @@
                     android:textSize="@dimen/textsize_small" />
 
                 <TextView
-                    android:id="@+id/current_designation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=""
@@ -297,19 +290,16 @@
                 app:tabTextColor="@android:color/tertiary_text_light">
 
                 <android.support.design.widget.TabItem
-                    android:id="@+id/tabItem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tab_skill_set" />
 
                 <android.support.design.widget.TabItem
-                    android:id="@+id/tabItem2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tab_work_function" />
 
                 <android.support.design.widget.TabItem
-                    android:id="@+id/tabItem3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tab_industry" />
@@ -317,7 +307,6 @@
             </android.support.design.widget.TabLayout>
 
             <android.support.v4.view.ViewPager
-                android:id="@+id/tabText"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@color/back_grey"
